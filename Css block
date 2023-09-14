@@ -1,0 +1,502 @@
+#pack_cont {
+    width: 350px;
+    height: 680px;
+    overflow-y: scroll;
+    margin: 5px auto;
+    padding: 80px 90px;
+    background-color: green;
+    border: 20px solid rgb(55, 27, 27);
+    border-radius: 30px;
+    margin-left: -15px;
+  }
+  
+  /*single card*/
+  .card {
+    width: 70px;
+    height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    position: absolute;
+    background-color: white;
+    background-image: url("https://dl.dropbox.com/scl/fi/8d0vrmttb6ogsv8rr8elq/PCpic.jpg?rlkey=rt1yl3ypkbrx01x7ls7ee6s43&");
+    background-size: contain;
+    background-repeat: repeat;
+    background-position:2.5px;
+    cursor: pointer;
+    text-align: center;
+    margin-left: -200;
+    pointer-events: none;
+    /*all transition to take 1s */
+    transition: all 1s;
+    -ms-transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+  
+    /*set card transform origin to 20% from x-axis and 80% from y-axis */
+    transform-origin: 20% 80%;
+    -ms-transform-origin: 20% 80%;
+    -webikit-transform-origin: 20% 80%;
+    -moz-transform-origin: 20% 80%;
+  
+    /*make card non selectable*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /*red colored card*/
+  .card.red {
+    color: red;
+  }
+  
+  /*
+  while opening a card, again shift transform origin 
+  to vertical and horizontal center axis 
+  to give an actual flip effect
+  */
+  .card.open {
+    transform-origin: center center !important;
+    -ms-transform-origin: center center !important;
+    -webikit-transform-origin: center center !important;
+    -moz-transform-origin: center center !important;
+    -webkit-transform: rotateY(180deg) !important;
+    transform: rotateY(180deg) !important;
+  }
+  
+  /*to show card value */
+  /*rotate the text to 180deg so the text is not mirrored when card is flipped*/
+  /* opened card text*/
+  .card.opened span:after {
+    content: attr(data-title);
+    transform: rotateY(180deg);
+    font-size: 25px;
+    display: block;
+  }
+  
+  /*hide background from open card */
+  .card.opened {
+    background-image: none;
+  }
+  
+  button {
+    cursor: pointer;
+    margin-top: 70px;
+    margin-left: 30px;
+    margin-right: 100px;
+    width: 50px;
+    position: absolute;
+  }
+
+  #start {
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+    width: 50px;
+    position: absolute;
+    
+  }
+  
+  #playAgain {
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 170px;
+    margin-right: 100px;
+    width: 80px;
+    position: absolute;
+    
+  }
+  
+  #howToPlay {
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 270px;
+    margin-right: 100px;
+    width: 90px;
+    position: absolute;
+    
+  }
+  
+  #myButton {
+    cursor: pointer;
+    margin-top: 520px;
+    margin-left: 105px;
+    margin-right: 200px;
+    width: 50px;
+    
+  }
+  
+  #myButton2 {
+    cursor: pointer;
+    margin-top: 520px;
+    margin-left: 200px;
+    margin-right: 200px;
+    width: 50px;
+    position: absolute;
+  }
+  
+  #myButton3 {
+    cursor: pointer;
+    margin-top: 520px;
+    margin-left: 300px;
+    margin-right: 200px;
+    width: 50px;
+    position: absolute;
+  }
+  
+  #myButton4 {
+    cursor: pointer;
+    margin-top: 520px;
+    margin-left: 105px;
+    margin-right: 200px;
+    width: 50px;
+  }
+  
+  #myButton5 {
+    cursor: pointer;
+    margin-top: 520px;
+    margin-left: 200px;
+    margin-right: 200px;
+    width: 50px;
+    position: absolute;
+  }
+  
+  #myButton6 {
+    cursor: pointer;
+    margin-top: 520px;
+    margin-left: 300px;
+    margin-right: 200px;
+    width: 50px;
+    position: absolute;
+  }
+  
+  #myButton7 {
+    cursor: pointer;
+    margin-top: 520px;
+    margin-left: 105px;
+    margin-right: 200px;
+    width: 50px;
+  }
+  
+  #myButton8 {
+    cursor: pointer;
+    margin-top: 520px;
+    margin-left: 200px;
+    margin-right: 200px;
+    width: 50px;
+    position: absolute;
+  }
+  
+  #myButton9 {
+    cursor: pointer;
+    margin-top: 520px;
+    margin-left: 300px;
+    margin-right: 200px;
+    width: 50px;
+    position: absolute;
+  }
+  
+  #myButton10 {
+    cursor: pointer;
+    margin-top: 520px;
+    margin-left: 105px;
+    margin-right: 200px;
+    width: 50px;
+  }
+  
+  #myButton11 {
+    cursor: pointer;
+    margin-top: 520px;
+    margin-left: 200px;
+    margin-right: 200px;
+    width: 50px;
+    position: absolute;
+  }
+  
+  #myButton12 {
+    cursor: pointer;
+    margin-top: 520px;
+    margin-left: 300px;
+    margin-right: 200px;
+    width: 50px;
+    position: absolute;
+  }
+  
+  #myButton13 {
+    cursor: pointer;
+    margin-top: 520px;
+    margin-left: 105px;
+    margin-right: 200px;
+    width: 50px;
+  }
+  
+  #myButton14 {
+    cursor: pointer;
+    margin-top: 520px;
+    margin-left: 200px;
+    margin-right: 200px;
+    width: 50px;
+    position: absolute;
+  }
+  
+  #myButton15 {
+    cursor: pointer;
+    margin-top: 520px;
+    margin-left: 300px;
+    margin-right: 200px;
+    width: 50px;
+    position: absolute;
+  }
+  
+  #myButton16 {
+    cursor: pointer;
+    margin-top: 520px;
+    margin-left: 105px;
+    margin-right: 200px;
+    width: 50px;
+  }
+  
+  #myButton17 {
+    cursor: pointer;
+    margin-top: 520px;
+    margin-left: 200px;
+    margin-right: 200px;
+    width: 50px;
+    position: absolute;
+  }
+  
+  #myButton18 {
+    cursor: pointer;
+    margin-top: 520px;
+    margin-left: 300px;
+    margin-right: 200px;
+    width: 50px;
+    position: absolute;
+  }
+  
+  #myButton19 {
+    cursor: pointer;
+    margin-top: 220px;
+    margin-left: 10px;
+    margin-right: 200px;
+    width: 50px;
+  }
+
+  #myButton21 {
+    cursor: pointer;
+    margin-top: 70px;
+    margin-left: 110px;
+    margin-right: 100px;
+    width: 50px;
+    position: absolute;
+  }
+
+  #Q1 {
+    margin-top: 130px;
+    margin-left: 100px;
+    margin-right: 100px;
+    width: 270px;
+    position: absolute;
+    font-size: 20px;
+  }
+
+  #Q2 {
+    margin-top: 130px;
+    margin-left: 100px;
+    margin-right: 100px;
+    width: 280px;
+    position: absolute;
+    font-size: 20px;
+  }
+
+  #Q3 {
+    margin-top: 130px;
+    margin-left: 100px;
+    margin-right: 100px;
+    width: 280px;
+    position: absolute;
+    font-size: 20px;
+  }
+
+  
+  .hidden {
+    display: none;
+  }
+  
+  .vid1 {
+      rotate:0deg;
+      bottom:0;
+  }
+  
+  @keyframes loading {
+    0% {
+      cy: 10;
+    }
+    25% {
+      cy: 3;
+    }
+    50% {
+      cy: 10;
+    }
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+    background-color: #f4f7ff;
+  }
+  
+  canvas {
+    height: 100vh;
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  /* button {
+    background: none;
+    border: none;
+    color: #f4f7ff;
+    cursor: pointer;
+    font-family: 'Roboto', Arial;
+    font-size: 14px;
+    font-weight: 500px;
+    height: 40px;
+    left: 20%;
+    outline: none;
+    overflow: hidden;
+    padding: 0 10px;
+    position: absolute;
+    top: 10%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    z-index: 1; */
+  }
+  button::before {
+    background: #1f2335;
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4) inset;
+    content: '';
+    display: block;
+    height: 100%;
+    margin: 50px auto;
+    position: absolute;
+    transition: width 0.2s cubic-bezier(0.39, 1.86, 0.64, 1) 0.3s;
+    width: 100%;
+  }
+  
+  button.ready .submitMessage svg {
+    opacity: 1;
+    top: 50px;
+    transition: top .4s ease 600ms, opacity .3s linear 600ms;
+  }
+  button.ready .submitMessage .button-text span {
+    top: 50px;
+    opacity: 1;
+    transition: all 0.2s ease calc(var(--dr) + 600ms);
+  }
+  
+  button.loading::before {
+    transition: width .3s ease;
+    width: 80%;
+  }
+  button.loading .loadingMessage {
+    opacity: 1;
+  }
+  button.loading .loadingCircle {
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-name: loading;
+    cy: 10;
+  }
+  
+  button.complete .submitMessage svg {
+    top: 50px;
+    transition: none;
+  }
+  button.complete .submitMessage .button-text span {
+    top: 50px;
+    transition: none;
+  }
+  button.complete .loadingMessage {
+    top: 80px;
+  }
+  button.complete .successMessage .button-text span {
+    left: 0;
+    opacity: 1;
+    transition: all 0.2s ease calc(var(--d) + 1000ms);
+  }
+  button.complete .successMessage svg {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset .3s ease-in-out 1.4s;
+  }
+  
+  .button-text span {
+    opacity: 0;
+    position: relative;
+  }
+  
+  .message {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+  
+  .message svg {
+    display: inline-block;
+    fill: none;
+    margin-right: 5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+  }
+  
+  .submitMessage .button-text span {
+    top: 8px;
+    transition: all 0.2s ease var(--d);
+  }
+  .submitMessage svg {
+    color: #5c86ff;
+    margin-left: -1px;
+    opacity: 0;
+    position: relative;
+    top: 30px;
+    transition: top .4s ease, opacity .3s linear;
+    width: 14px;
+  }
+  
+  .loadingMessage {
+    opacity: 0;
+    transition: opacity 0.3s linear 0.3s, top 0.4s cubic-bezier(0.22, 0, 0.41, -0.57);
+  }
+  .loadingMessage svg {
+    fill: #5c86ff;
+    margin: 0;
+    width: 22px;
+  }
+  
+  .successMessage .button-text span {
+    left: 5px;
+    transition: all 0.2s ease var(--dr);
+  }
+  .successMessage svg {
+    color: #5cffa1;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 20;
+    transition: stroke-dashoffset .3s ease-in-out;
+    width: 14px;
+  }
+  
+  .loadingCircle:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  
+  .loadingCircle:nth-child(3) {
+    animation-delay: 0.2s;
+  }y: 0.2s;
+
+  }
