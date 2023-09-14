@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>cardtrick</title>
+    <link rel="stylesheet" href="./style2.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+
+      
+      <body>
+        
+        
+    <button id="start" type="button">Start</button>
+    <button id="playAgain" type="button" >Play Again</button>
+    <button id="howToPlay" type="button">How to Play</button>
+    <button id="myButton" type="button" style="display: none">Line 1</button>
+    <button id="myButton2" type="button" style="display: none">Line 2</button>
+    <button id="myButton3" type="button" style="display: none">Line 3</button>
+    <button id="myButton4" type="button"  style="display: none">Line 1</button>
+    <button id="myButton5" type="button"  style="display: none">Line 2</button>
+    <button id="myButton6" type="button"  style="display: none">Line 3</button>
+    <button id="myButton7" type="button"  style="display: none">Line 1</button>
+    <button id="myButton8" type="button"  style="display: none">Line 2</button>
+    <button id="myButton9" type="button "  style="display: none">Line 3</button>
+    <button id="myButton10" type="button "  style="display: none">Line 1</button>
+    <button id="myButton11" type="button "  style="display: none">Line 2</button>
+    <button id="myButton12" type="button "  style="display: none">Line 3</button>
+    <button id="myButton13" type="button "  style="display: none">Line 1</button>
+    <button id="myButton14" type="button "  style="display: none">Line 2</button>
+    <button id="myButton15" type="button "  style="display: none">Line 3</button>
+    <button id="myButton16" type="button "  style="display: none">Card 1</button>
+    <button id="myButton17" type="button "  style="display: none">Card 2</button>
+    <button id="myButton18" type="button "  style="display: none">Card 3</button>
+    <button id="myButton19" type="button "  style="display: none">Click to Show</button>
+    <button id="button20" type="button " class="ready" onclick="clickButton(),setTimeout(clickButton,10000)" style="display: none">Yes</button>
+    <button id="myButton21" type="button " class="ready" onclick="alert8();" style="display: none">No</button>
+    <p id="Q1" >Click👆 Start to Begin Playing.</p>
+    <p id="Q2" style="display: none">👈 Is this your Card?</p>
+    <p id="Q3" style="display: none">🥳Awesome! 👆Click Play Again to have another go.</p>  
+    
+      
+      <canvas id="canvas"></canvas>
+    
+        <!-- cards container -->
+        <div class="sortable-container" id="pack_cont">
+            
+          <!-- single card -->
+          <div id="C1A" class="card red" data-order="1">
+            <span id="C1" data-value="1" data-title="A ♦"></span>
+          </div>
+
+          <!-- single card -->
+          <div id="C2A" class="card red" data-order="2">
+            <span id="C2" data-value="4" data-title="2 ♦"></span>
+          </div>
+
+          <!-- single card -->
+          <div id="C3A" class="card" data-order="3">
+            <span id="C3" data-value="4" data-title="5 ♣"></span>
+          </div>
+          
+          <!-- single card -->
+          <div id="C4A" class="card red" data-order="4" >
+            <span id="C4" data-value="6" data-title="K ♥"></span>
+          </div>
+
+          <!-- single card -->
+          <div id="C5A" class="card" data-order="5">
+            <span id="C5" data-value="7" data-title="J ♣"></span>
+          </div>
+
+          <!-- single card -->
+          <div id="C6A" class="card red" data-order="6">
+            <span id="C6" data-value="2" data-title="7 ♦"></span>
+          </div>
+
+          <!-- single card -->
+          <div id="C7A" class="card" data-order="7">
+            <span id="C7" data-value="10" data-title="Q ♠"></span>
+          </div>
+
+          <!-- single card -->
+          <div id="C8A" class="card red" data-order="8">
+            <span id="C8" data-value="K" data-title="4 ♦"></span>
+          </div>
+
+          <!-- single card -->
+          <div id="C9A" class="card" data-order="9">
+            <span id="C9" data-value="3" data-title="3 ♣"></span>
+          </div>
+
+          <!-- single card -->
+          <div id="C10A" class="card" data-order="10">
+            <span id="C10" data-value="10" data-title="6 ♣"></span>
+          </div>
+
+          <!-- single card -->
+          <div id="C11A" class="card" data-order="11">
+            <span id="C11" data-value="6" data-title="K ♣" display: none></span>
+          </div>
+
+          <!-- single card -->          
+          <div id="C12A" class="card red" data-order="12">
+            <span id="C12" data-value="10" data-title="Q ♥"></span>
+          </div>        
+
+          <!-- single card -->
+          <div id="C13A" class="card red" data-order="13">
+            <span id="C13" data-value="J" data-title="8 ♥"></span>
+          </div>
+
+          <!-- single card -->
+          <div id="C14A" class="card red" data-order="14">
+            <span id="C14" data-value="Q" data-title="2 ♥" ></span>
+          </div>
+
+          <!-- single card -->
+          <div id="C15A" class="card" data-order="15">
+            <span id="C15" data-value="8" data-title="A ♠"></span>
+          </div>
+          
+            <!-- single card -->
+          <div id="C16A" class="card" data-order="16">
+            <span id="C16" data-value="9" data-title="4 ♠"></span>
+          </div>
+          
+
+          <!-- single card -->
+          <div id="C17A" class="card" data-order="17">
+            <span id="C17" data-value="2" data-title="J ♠"></span>
+          </div>
+
+          <!-- single card -->
+          <div id="C18A" class="card" data-order="18">
+            <span id="C18" data-value="7" data-title="3 ♠"></span>
+          </div>
+
+
+          <!-- single card -->
+          <div id="C19A" class="card red" data-order="19">
+            <span id="C19" data-value="4" data-title="Q ♦"></span>
+          </div>
+
+          <!-- single card -->
+          <div id="C20A" class="card" data-order="20" >
+            <span id="C20" data-value="Q" data-title="9 ♠"></span>
+          </div>
+
+          <!-- single card -->
+          <div id="C21A" class="card red" data-order="21">
+            <span id="C21" data-value="A" data-title="5 ♥"></span>
+          </div>
+
+
+        </div>
+        
+        
+        
+        <script>
+
+alertA()
+
+//help/recognition
+// original Cards animation effect from sanjay
+//https://codepen.io/sanjayahirwar/pen/XvEREr
+
+// original Confetti effect from Zane Wesley
+//https://codepen.io/zanewesley/pen/yLgPEON
+
+
+          let card_container_width = $("#pack_cont").width();
+          let total_cards = $(".card").length; //any number of cards will work
+          let card_spacing = 25;
+
+          const numberOfSlots = 3;
+
+       
+            
+           const numbers = [
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
+          
+
+          //shuffle plugin
+          (function ($) {
+            $.fn.shuffle = function () {
+              let allElems = this.get(),
+                getRandom = function (max) {
+                  return;
+                },
+                shuffled = $.map(allElems, function () {
+                  let random = getRandom(allElems.length),
+                    randEl = $(allElems[0]).clone(true)[0];
+                  allElems.splice(0, 1);
+                  return randEl;
+                });
+
+              this.each(function (i) {
+                $(this).replaceWith($(shuffled[i]));
+              });
+
+              return $(shuffled);
+            };
+          })(jQuery);
+
+          //bring cards to initail stacked position
+          function reset_cards() {
+            //hide all cards faces
+            $(".card").removeClass("open");
+            //stack all cards
+            stack_cards(0.2);
+            //close all cards
+            close_all_cards();
+            //remove any rotation
+            animate_card(0);
+          }
+
+          //stacks all card with a relative margin, to give a 3d effect
+          function stack_cards(margin) {
+            let left = -90;
+            let step = margin;
+            let i = 0;
+            $(".card").each(function () {
+              $(this).css({ "z-index": i });
+              $(this).css({ "margin-left": left + "px" });
+              $(this).css({ "margin-top": 0 + "px" });
+              left = left + step;
+              i++;
+            });
+          }
+
+          //rotate all cards to a specific degree
+          //rotates all card from 0 to deg range
+          function animate_card(deg) {
+            let start = 0;
+            let end = deg;
+            let step = deg / total_cards;
+            let angle = 0;
+            $(".card").each(function () {
+              $(this).css({
+                transform: "rotate(" + angle + "deg)",
+                "-webkit-transform": "rotate(" + angle + "deg)",
+                "-moz-transform": "rotate(" + angle + "deg)",
+                "-ms-transform": "rotate(" + angle + "deg)",
+              });
+              angle += step;
+            });
+          }
+
+
+          //slowly separate all cards in a line
+          function separate_one_by_one() {
+            let left = 0;
+            let card_width = $(".card").width();
+            let card_height = $(".card").height();
+            //initial top margin for card placement
+            let top = -20;
+            let topG = -50;
+            //initial left margin for card placement
+            let left_step = card_width + card_spacing;
+
+            //time lag between each card placement
+            let sec_step = 100;
+            let time = 0;
+
+            //loop through all cards
+            $(".card").each(function () {
+              let card = $(this);
+              setTimeout(function () {
+                card.css({
+                  "margin-top": top + "px",
+                  "margin-left": left + "px",
+                });
+
+                left = left + left_step;
+                //if card cannot fit in current row then place it card in next row
+                if (left + card_width + card_spacing > card_container_width) {
+                  left = 0;
+                  top += card_height + topG;
+                }
+              }, time);
+              //add time lag for next card placement
+              time += sec_step;
+            });
+          }
+
+          //show all card
+          function open_all_cards() {
+            $(".card").addClass("open");
+            setTimeout(function () {
+              $(".card").addClass("opened");
+            }, 300);
+          }
+
+          //hide all card faces
+          function close_all_cards() {
+            $(".card").removeClass("open");
+            setTimeout(function () {
+              $(".card").removeClass("opened");
+            }, 300);
+          }
+
+         
+
+          function shufle_cards() {
+            //shuffle all cards in DOM
+            $(".card").shuffle();
+
+            //create shuffle effect(just to show it to user)
+            let i = 0;
+            let time = 0;
+            let shuffle_time = 4;
+            let counter = 0;
+
+            $($(".card").get().reverse()).each(function () {
+              let card = $(this);
+              setTimeout(function () {
+                card.animate({ "margin-left": "100px" }, 1);
+                setTimeout(function () {
+                  card.animate({ "z-index": i });
+                  card.animate({ "margin-left": "-130px" }, 20);
+                }, 100);
+                i++;
+              }, time);
+              time += 600;
+              counter++;
+              //limit shuffle to specific no of times.
+              if (counter > shuffle_time) return false;
+            });
+            reset_cards();
+          }
+
+          $(document).ready(function () {
+            stack_cards(0.2);
+            //card click event
+            $(".card").click(function () {
+              let card = $(this);
+              card.toggleClass("open");
+              setTimeout(function () {
+                card.toggleClass("opened");
+              }, 300);
+            });
+
+            //the game
+          });
+
+          //stack card face open + deal
+          function reset1() {
+            reset_cards();
+            setTimeout(open_all_cards, 1000);
+            function open_all_cards() {
+              $(".card").addClass("open");
+              setTimeout(function () {
+                $(".card").addClass("opened");
+              }, 300);
+            }
+
+            setTimeout(separate_one_by_one, 1000);
+            function separate_one_by_one() {
+              let left = 0;
+              let card_width = $(".card").width();
+              let card_height = $(".card").height();
+              //initial top margin for card placement
+              let top = -20;
+              let topG = -50;
+              //initial left margin for card placement
+              let left_step = card_width + card_spacing;
+
+              //time lag between each card placement
+              let sec_step = 100;
+              let time = 0;
+
+              //loop through all cards
+              $(".card").each(function () {
+                let card = $(this);
+                setTimeout(function () {
+                  card.css({
+                    "margin-top": top + "px",
+                    "margin-left": left + "px",
+                  });
+
+                  left = left + left_step;
+                  //if card cannot fit in current row then place it card in next row
+                  if (left + card_width + card_spacing > card_container_width) {
+                    left = 0;
+                    top += card_height + topG;
+                  }
+                }, time);
+                //add time lag for next card placement
+                time += sec_step;
+              });
+            }
+          }
+
+          
+
+//custom sort
+function customSort1(orderArray) {
+  let container = document.querySelector('.sortable-container');
+  let sorted = [];
+  let displayedIds = [];
+
+  for (let i = 0; i < orderArray.length; i++) {
+    let element = container.querySelector('[data-order="' + orderArray[i] + '"]');
+    sorted.push(element);
+    displayedIds.push(element.id);
+  }
+
+// Clear container
+  container.innerHTML = ''; 
+
+  for (let j = 0; j < sorted.length; j++) {
+    container.appendChild(sorted[j]);
+  }
+
+  return displayedIds;
+}
+
+
+  // Custom order1 based on data-order attribute values
+  
+function wrap0() {
+  let orderArray = combinedA;
+  displayedIds = customSort1(orderArray);
+          }
+
+// Custom order2 based on data-order attribute values    
+function wrap() {
+  let orderArray = combinedB; 
+  displayedIds = customSort1(orderArray);
+          }
+
+// Custom order3 based on data-order attribute values
+function wrap2() {
+let orderArray = combinedC; 
+displayedIds = customSort1(orderArray);
+          }
+
+// Custom order4 based on data-order attribute values
+function wrap3() {
+let orderArray = combinedD; 
+displayedIds = customSort1(orderArray);
+          }
+
+
+//MN Set
+function wrapUp() {
+  let MN = Number(strArr[10]); 
+
+
+//MN Dom Set
+  function showCard(cardNumber) {
+    let cardSelector = '#C' + cardNumber + 'A';
+    let cardElement = document.querySelector(cardSelector);
+    let cardIds = [
+    "C1A", "C2A", "C3A", "C4A", "C5A", "C6A",
+    "C7A", "C8A", "C9A", "C10A", "C11A", "C12A",
+    "C13A", "C14A", "C15A", "C16A", "C17A", "C18A",
+    "C19A", "C20A", "C21A"
+  ];
+
+  for (let i = 0; i < cardIds.length; i++) {
+    let cardElement = document.getElementById(cardIds[i]);
+    if (cardElement) {
+      cardElement.style.display = 'none';
+    }
+  }
+    if (cardElement) {
+      cardElement.style.display = 'block';
+    }
+    
+  }
+
+  let cardNumberToShow = MN; 
+  showCard(cardNumberToShow);
+}
+
+
+// Show + Hide cards
+// Custom order based on data-order attribute values
+  function hideCards1() {
+    let orderArray = numbers; 
+
+displayedIds = customSort1(orderArray);
+  for (let i = 0; i < displayedIds.length; i++) {
+    document.getElementById(displayedIds[i]).style.display = "none";
+   
+  }
+}
+
+//Face down cut 2 - Custom order based on data-order attribute values
+function showCards1() {
+
+let orderArray = combinedA; 
+displayedIds = customSort1(orderArray);
+  for (let i = 0; i < 9; i++) {
+    document.getElementById(displayedIds[i]).style.display = "";
+}
+}
+
+
+
+// Show all Cards, Custom order based on data-order attribute values
+function showAllCards() {
+orderArray = combinedA
+displayedIds = customSort1(orderArray);
+
+  for (let i = 0; i < displayedIds.length; i++) {
+    document.getElementById(displayedIds[i]).style.display= "";
+   
+  }
+}
+
+
+//Face down cut 2
+function hideShow1 () {
+  hideCards1()
+  showCards1()
+}
+
+
+//Face down cut 3
+function hideCards2 () {
+  document.getElementById(displayedIds[0]).style.display = "";
+  document.getElementById(displayedIds[1]).style.display = "";
+  document.getElementById(displayedIds[2]).style.display = "";
+  document.getElementById(displayedIds[3]).style.display = "none";
+  document.getElementById(displayedIds[4]).style.display = "none";
+  document.getElementById(displayedIds[5]).style.display = "none";
+  document.getElementById(displayedIds[6]).style.display = "none";
+  document.getElementById(displayedIds[7]).style.display = "none";
+  document.getElementById(displayedIds[8]).style.display = "none";
+}
+
+
+// Show/Hide buttons/Table Msgs
+document.addEventListener("DOMContentLoaded", function () {
+  let buttons = [
+  document.getElementById("Q1"),
+  document.getElementById("start"),
+  document.getElementById("myButton"),
+  document.getElementById("myButton2"),
+  document.getElementById("myButton3"),
+  document.getElementById("myButton4"),
+  document.getElementById("myButton5"),
+  document.getElementById("myButton6"),
+  document.getElementById("myButton7"),
+  document.getElementById("myButton8"),
+  document.getElementById("myButton9"),
+  document.getElementById("myButton10"),
+  document.getElementById("myButton11"),
+  document.getElementById("myButton12"),
+  document.getElementById("myButton13"),
+  document.getElementById("myButton14"),
+  document.getElementById("myButton15"),
+  document.getElementById("myButton16"),
+  document.getElementById("myButton17"),
+  document.getElementById("myButton18"),
+  document.getElementById("Q2"),
+  document.getElementById("myButton19"),
+  document.getElementById("myButton21"),
+  document.getElementById("button20"),
+  document.getElementById("Q3"),
+  document.getElementById("playAgain"),
+  ];
+
+  let showButtons = function (startIndex, endIndex) {
+    for (let i = startIndex; i <= endIndex; i++) {
+      buttons[i].style.display = "block";
+    }
+  };
+
+  let hideButtons = function (startIndex, endIndex) {
+    for (let i = startIndex; i <= endIndex; i++) {
+      buttons[i].style.display = "none";
+    }
+  };
+
+  let addListener = function (buttonIndex, hideRange, showRange) {
+    buttons[buttonIndex].addEventListener("click", function () {
+      hideButtons.apply(null, hideRange);
+      showButtons.apply(null, showRange);
+    });
+  };
+  addListener(1, [0, 0], [2, 4]);
+  addListener(2, [2, 4], [5, 7]);
+  addListener(3, [2, 4], [5, 7]);
+  addListener(4, [2, 4], [5, 7]);
+  addListener(5, [5, 7], [8, 10]);
+  addListener(6, [5, 7], [8, 10]);
+  addListener(7, [5, 7], [8, 10]);
+  addListener(8, [8, 10], [11, 13]);
+  addListener(9, [8, 10], [11, 13]);
+  addListener(10, [8, 10], [11, 13]);
+  addListener(11, [11, 13], [14, 16]);
+  addListener(12, [11, 13], [14, 16]);
+  addListener(13, [11, 13], [14, 16]);
+  addListener(14, [14, 16], [17, 19]);
+  addListener(15, [14, 16], [17, 19]);
+  addListener(16, [14, 16], [17, 19]);
+  addListener(17, [17, 19], [20, 21]);
+  addListener(18, [17, 19], [20, 21]);
+  addListener(19, [17, 19], [20, 21]);
+  addListener(21, [21, 21], [22, 23]);
+  addListener(22, [20, 23], [1, 1]);
+  addListener(23, [20, 22], [24, 24]);
+  addListener(25, [5, 24], [2, 4]);
+});
+
+
+//Starting order Reset Dom
+function startOrder() {
+
+ nestedArray0 = Array(numberOfSlots)
+  .fill(null)
+  .map(() => new Array());
+
+  numbers.forEach((number, index) => {
+  nestedArray0[index % numberOfSlots].push(number);
+   });
+
+  listA = nestedArray0;
+
+  nestedArray0Flat = nestedArray0.flat();
+  listA1 = nestedArray0Flat;
+
+  p1AA = numbers.slice(0, 7);
+  p2AA = numbers.slice(7, 14);
+  p3AA = numbers.slice(14, 21);
+  combinedA = p1AA.concat(p2AA, p3AA);
+  wrap0()
+
+  p1A = listA1.slice(0, 7);
+  p2A = listA1.slice(7, 14);
+  p3A = listA1.slice(14, 21);
+
+  };
+
+  // Reset Game - Play again
+  function playAgainReset() {
+
+startOrder()
+showAllCards()
+close_all_cards()
+
+setTimeout(reset_cards,1000)
+setTimeout(open_all_cards,2500)
+setTimeout(separate_one_by_one,2600) 
+
+setTimeout(alert1,7000)
+}
+
+//Dealing functions
+
+
+function Deal2() {
+// 2nd deal
+nestedArray1 = Array(numberOfSlots)
+   .fill(null)
+    .map(() => new Array());
+
+  combinedB.forEach((number, index) => {
+  nestedArray1[index % numberOfSlots].push(number);
+    });
+
+    nestedArray1Flat = nestedArray1.flat();
+    listB1 = nestedArray1Flat;
+
+    p1B = listB1.slice(0, 7);
+    p2B = listB1.slice(7, 14);
+    p3B = listB1.slice(14, 21);
+
+    // //fixing undefined elements in array
+     arr = combinedB;
+      strArr = arr.map(function (e) {
+       return e.toString();
+         });
+}
+
+function Deal3() {
+ // 3rd deal
+ nestedArray2 = Array(numberOfSlots)
+  .fill(null)
+  .map(() => new Array());
+
+  combinedC.forEach((number, index) => {
+  nestedArray2[index % numberOfSlots].push(number);
+    });
+
+  nestedArray1Flat2 = nestedArray2.flat();
+
+  listC1 = nestedArray1Flat2;
+
+  p1C = listC1.slice(0, 7);
+  p2C = listC1.slice(7, 14);
+  p3C = listC1.slice(14, 21);
+
+  // //fixing undefined elements in array
+  arr = combinedC;
+      strArr = arr.map(function (e) {
+  return e.toString();
+  });
+}
+
+function Deal4() {
+  //4th deal
+  nestedArray3 = Array(numberOfSlots)
+    .fill(null)
+    .map(() => new Array());
+
+    combinedD.forEach((number, index) => {
+     nestedArray3[index % numberOfSlots].push(number);
+    });
+
+    nestedArray1Flat3 = nestedArray3.flat();
+    listD1 = nestedArray1Flat3;
+
+    // //fixing undefined elements in array
+    arr = listD1;
+    strArr = arr.map(function (e) {
+    return e.toString();
+              });
+
+    p1D = listD1.slice(0, 7);
+    p2D = listD1.slice(7, 14);
+    p3D = listD1.slice(14, 21);
+}
+
+
+function deal2B1() {
+  close_all_cards()
+  setTimeout(reset_cards, 2000)
+  setTimeout(wrap, 2900)
+  setTimeout(reset1, 3000)
+  
+       setTimeout(alert2,7500)
+}
+
+function deal3B1() {
+  close_all_cards()
+  setTimeout(reset_cards, 2000)
+  setTimeout(wrap2, 2900)
+  setTimeout(reset1, 3000)
+
+  setTimeout(alert3,7500)
+}
+
+function deal4B1() {
+close_all_cards()
+  setTimeout(reset_cards, 2000)
+  setTimeout(wrap3, 2900)
+  
+    close_all_cards()
+    setTimeout(reset_cards,4000)
+    setTimeout(separate_one_by_one, 4000)
+    setTimeout(alert4,7500)
+}
+
+function deal5B1() {
+reset_cards()
+  setTimeout(hideShow1, 1500)
+  setTimeout(reset_cards, 1550)
+  setTimeout(separate_one_by_one,1580)
+  setTimeout(alert5,4000)
+}
+
+function deal6B1() {
+reset_cards()
+setTimeout(hideCards2,500)
+setTimeout(separate_one_by_one,1000)
+setTimeout(alert6,2200)
+}
+
+function deal7B1() {
+wrapUp()
+  reset_cards()
+  setTimeout(alert7,20)
+}
+
+  //Dealer Msgs
+  function alertA() {
+
+alert("Thanks for checking out my App/code, I Thought I'd have a go at coding up the best card trick I know. Pls follow the dealer MSG prompts to play, I hope you enjoy. Pls ^upvote if you like 👍 + Comment would luv to hear your feedback thanks")
+}
+
+function alert0() {
+
+alert("How to Play:- When ready to begin press (Start) to begin game > Cards will be dealt into 3 vertical lines (line 1, Line 2, Line 3) each line will have its own button below it highlighting which line it is. > Dealer will provide you MSG prompts throughout the game to guide you through each step, ensure you follow these MSG prompts to play the game > at any time if needed you can hit the (Play Again) button to reset the game and start from the beginning")
+}
+  
+function alert1() {
+
+  alert("Dealer Msg: - You will notice 3 lines of cards have been dealt. Using your (eyes 👀 only), Select a card and memorise it. Take notice what line your card is in either Line 1, Line 2 or Line 3. Using the buttons below. Select the line that your card is in.")
+}
+  
+
+function alert2() {
+
+alert("Dealer Msg: - Cards have been shuffled up and dealt, Take notice what line your card is in either Line 1, Line 2 or Line 3. Using the buttons below. Select the line that your card is in.")
+}
+
+function alert3() {
+
+alert("Dealer Msg: - Cards have been shuffled up and dealt, Take notice what line your card is in either Line 1, Line 2 or Line 3. Using the buttons below. Select the line that your card is in.")
+}
+
+function alert4() {
+
+alert("Dealer Msg: - Cards have been shuffled up and dealt face down into 3 lines, Using the buttons below. Select a line to keep as we will get rid of the rest, either Line 1, Line 2 or Line 3 ")
+}
+
+function alert5() {
+
+alert("Dealer Msg: - Cards have been cut leaving only your previously selected line, shuffled up and dealt face down into 3 lines, Using the buttons below. Select a line either Line 1, Line 2 or Line 3")
+}
+
+function alert6() {
+
+alert("Dealer Msg: - Cards have been cut leaving only your previously selected line, shuffled up and dealt face down into 3 Cards, Using the buttons below. Select a Card either Card 1, Card 2 or Card 3")
+}
+
+function alert7() {
+
+alert("Dealer Msg: - Turn over your Card 😉")
+}
+
+function alert8() {
+
+alert("Dealer Msg: - Lets try this again, on the next page hit the (Play again) button however this time make sure you read and follow the prompts. Addionally you may want to hit the how to play button before trying again. tip make sure you select the correct Line that your card is in eg Line 1, Line 2 or Line 3")
+}
+
+//Game Start Btn
+document.getElementById("start").addEventListener("click", function () {
+   
+  open_all_cards();
+  separate_one_by_one();
+  
+  nestedArray0 = Array(numberOfSlots)
+  .fill(null)
+  .map(() => new Array());
+
+  numbers.forEach((number, index) => {
+  nestedArray0[index % numberOfSlots].push(number);
+   });
+
+  listA = nestedArray0;
+
+  nestedArray0Flat = nestedArray0.flat();
+  listA1 = nestedArray0Flat;
+
+  p1AA = numbers.slice(0, 7);
+  p2AA = numbers.slice(7, 14);
+  p3AA = numbers.slice(14, 21);
+  combinedA = p1AA.concat(p2AA, p3AA);
+  wrap0()
+
+  p1A = listA1.slice(0, 7);
+  p2A = listA1.slice(7, 14);
+  p3A = listA1.slice(14, 21);
+  
+ 
+              setTimeout(alert1,4000)
+  });
+
+
+
+//Reset game/Play again btn
+ document.getElementById("playAgain").addEventListener("click", function () {
+close_all_cards()
+setTimeout(playAgainReset,2000)
+});
+
+
+//how to play btn
+document.getElementById("howToPlay").addEventListener("click", function () {
+    alert0()   
+});
+
+
+
+//2nd deal B1
+document.getElementById("myButton").addEventListener("click", function () {
+  combinedB = p2A.concat(p1A, p3A);
+   // 2nd deal Dom
+  deal2B1()
+
+//   // 2nd deal
+Deal2()
+
+});
+
+
+
+
+//2nd deal B2
+document.getElementById("myButton2").addEventListener("click", function () {
+     combinedB = p1A.concat(p2A, p3A);
+   // 2nd deal Dom
+   deal2B1() 
+
+// 2nd deal
+Deal2()
+
+});
+
+
+//2nd deal B3
+document.getElementById("myButton3").addEventListener("click", function () {
+  combinedB = p1A.concat(p3A, p2A);
+   // 2nd deal Dom
+  deal2B1() 
+
+    // 2nd deal
+    Deal2()
+
+});
+
+
+//3rd deal B4
+document.getElementById("myButton4").addEventListener("click", function () {
+    combinedC = p2B.concat(p1B, p3B);
+     // 3rd deal Dom
+    deal3B1()       
+
+  // 3rd deal
+  Deal3()
+});
+
+
+//3rd deal B5
+  document.getElementById("myButton5").addEventListener("click", function () {
+       combinedC = p1B.concat(p2B, p3B);
+        // 3rd deal Dom
+       deal3B1()     
+
+   // 3rd deal
+   Deal3()
+});
+
+//3rd deal B6
+document.getElementById("myButton6").addEventListener("click", function () {
+    combinedC = p1B.concat(p3B, p2B);
+     // 3rd deal Dom
+    deal3B1()
+
+    // 3rd deal
+    Deal3()
+ });
+
+
+//4th deal B7
+document.getElementById("myButton7").addEventListener("click", function () {
+  combinedD = p2C.concat(p1C, p3C);
+  //4th deal Dom
+  deal4B1()
+
+  //4th deal
+  Deal4() 
+
+            });
+
+//4th deal B8
+document.getElementById("myButton8").addEventListener("click", function () {
+      combinedD = p1C.concat(p2C, p3C);
+      //4th deal Dom
+      deal4B1()
+  
+    //4th deal
+    Deal4() 
+});
+
+//4th deal B9   
+document.getElementById("myButton9").addEventListener("click", function () {
+        combinedD = p1C.concat(p3C, p2C);
+        //4th deal Dom
+        deal4B1()
+  
+        //4th deal 
+        Deal4() 
+       
+    });
+
+//5th deal B10
+document.getElementById("myButton10").addEventListener("click", function () {
+
+    deal5B1()
+
+});
+
+
+//5th deal B11
+document.getElementById("myButton11").addEventListener("click", function () {
+    deal5B1()
+
+});
+
+//5th deal B12
+document.getElementById("myButton12").addEventListener("click", function () {
+    deal5B1()
+
+});
+
+//6th deal B13
+document.getElementById("myButton13").addEventListener("click", function () {
+    deal6B1()
+
+});
+
+
+//6th deal B14
+document.getElementById("myButton14").addEventListener("click", function () {
+    deal6B1()
+
+});
+
+
+//6th deal B15
+document.getElementById("myButton15").addEventListener("click", function () {
+    deal6B1()
+});
+
+
+//7th deal B16
+document.getElementById("myButton16").addEventListener("click", function () {
+    deal7B1()
+
+
+});
+
+
+//7th deal B17
+  document.getElementById("myButton17").addEventListener("click", function () {
+    deal7B1()
+
+  });
+
+
+//7th deal B18
+    document.getElementById("myButton18").addEventListener("click", function () {
+        deal7B1()
+   
+    });
+
+
+//B19
+    document.getElementById("myButton19").addEventListener("click", function () {
+      open_all_cards()
+    });
+
+
+
+    //Yes effect/Confetti
+    const button = document.getElementById('button20');
+        var disabled = false;
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let cx = ctx.canvas.width / 2;
+        let cy = ctx.canvas.height / 2;
+
+        // add Confetti/Sequince objects to arrays to draw them
+        let confetti = [];
+        let sequins = [];
+
+        // ammount to add on each button press
+        const confettiCount = 400;
+        const sequinCount = 10;
+
+        // "physics" variables
+        const gravityConfetti = 0.3;
+        const gravitySequins = 0.55;
+        const dragConfetti = 0.075;
+        const dragSequins = 0.02;
+        const terminalVelocity = 3;
+
+        // colors, back side is darker for confetti flipping
+        const colors = [
+          { front : '#7b5cff', back: '#6245e0' }, // Purple
+          { front : '#b3c7ff', back: '#8fa5e5' }, // Light Blue
+          { front : '#5c86ff', back: '#345dd1' }  // Darker Blue
+        ];
+
+        // helper function to pick a random number within a range
+        randomRange = (min, max) => Math.random() * (max - min) + min;
+
+        // helper function to get initial velocities for confetti
+        // this weighted spread helps the confetti look more realistic
+        initConfettoVelocity = (xRange, yRange) => {
+          const x = randomRange(xRange[0], xRange[1]);
+          const range = yRange[1] - yRange[0] + 1;
+          let y = yRange[1] - Math.abs(randomRange(0, range) + randomRange(0, range) - range);
+          if (y >= yRange[1] - 1) {
+            // Occasional confetto goes higher than the max
+            y += (Math.random() < .25) ? randomRange(1, 3) : 0;
+          }
+          return {x: x, y: -y};
+        }
+
+        // Confetto Class
+        function Confetto() {
+          this.randomModifier = randomRange(0, 99);
+          this.color = colors[Math.floor(randomRange(0, colors.length))];
+          this.dimensions = {
+            x: randomRange(5, 9),
+            y: randomRange(8, 15),
+          };
+          this.position = {
+            x: randomRange(canvas.width/10 - button.offsetWidth/10, canvas.width/12 + button.offsetWidth/10),
+            y: randomRange(canvas.height/25 + button.offsetHeight/2 + 8, canvas.height/25 + (1.5 * button.offsetHeight) - 8),
+          };
+          this.rotation = randomRange(0, 2 * Math.PI);
+          this.scale = {
+            x: 1,
+            y: 1,
+          };
+          this.velocity = initConfettoVelocity([-9, 9], [6, 11]);
+        }
+        Confetto.prototype.update = function() {
+          // apply forces to velocity
+          this.velocity.x -= this.velocity.x * dragConfetti;
+          this.velocity.y = Math.min(this.velocity.y + gravityConfetti, terminalVelocity);
+          this.velocity.x += Math.random() > 0.5 ? Math.random() : -Math.random();
+          
+          // set position
+          this.position.x += this.velocity.x;
+          this.position.y += this.velocity.y;
+
+          // spin confetto by scaling y and set the color, .09 just slows cosine frequency
+          this.scale.y = Math.cos((this.position.y + this.randomModifier) * 0.09);    
+        }
+
+        // Sequin Class
+        function Sequin() {
+          this.color = colors[Math.floor(randomRange(0, colors.length))].back,
+          this.radius = randomRange(1, 2),
+          this.position = {
+            x: randomRange(canvas.width/2 - button.offsetWidth/3, canvas.width/2 + button.offsetWidth/3),
+            y: randomRange(canvas.height/2 + button.offsetHeight/2 + 8, canvas.height/2 + (1.5 * button.offsetHeight) - 8),
+          },
+          this.velocity = {
+            x: randomRange(-6, 6),
+            y: randomRange(-8, -12)
+          }
+        }
+        Sequin.prototype.update = function() {
+          // apply forces to velocity
+          this.velocity.x -= this.velocity.x * dragSequins;
+          this.velocity.y = this.velocity.y + gravitySequins;
+          
+          // set position
+          this.position.x += this.velocity.x;
+          this.position.y += this.velocity.y;
+        }
+
+        // add elements to arrays to be drawn
+        initBurst = () => {
+          for (let i = 0; i < confettiCount; i++) {
+            confetti.push(new Confetto());
+          }
+          for (let i = 0; i < sequinCount; i++) {
+            sequins.push(new Sequin());
+          }
+        }
+
+        // draws the elements on the canvas
+        render = () => {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          
+          confetti.forEach((confetto, index) => {
+            let width = (confetto.dimensions.x * confetto.scale.x);
+            let height = (confetto.dimensions.y * confetto.scale.y);
+            
+            // move canvas to position and rotate
+            ctx.translate(confetto.position.x, confetto.position.y);
+            ctx.rotate(confetto.rotation);
+
+            // update confetto "physics" values
+            confetto.update();
+            
+            // get front or back fill color
+            ctx.fillStyle = confetto.scale.y > 0 ? confetto.color.front : confetto.color.back;
+            
+            // draw confetto
+            ctx.fillRect(-width / 2, -height / 2, width, height);
+            
+            // reset transform matrix
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+
+            // clear rectangle where button cuts off
+            if (confetto.velocity.y < 0) {
+              ctx.clearRect(canvas.width/2 - button.offsetWidth/2, canvas.height/2 + button.offsetHeight/2, button.offsetWidth, button.offsetHeight);
+            }
+          })
+
+          sequins.forEach((sequin, index) => {  
+            // move canvas to position
+            ctx.translate(sequin.position.x, sequin.position.y);
+            
+            // update sequin "physics" values
+            sequin.update();
+            
+            // set the color
+            ctx.fillStyle = sequin.color;
+            
+            // draw sequin
+            ctx.beginPath();
+            ctx.arc(0, 0, sequin.radius, 0, 2 * Math.PI);
+            ctx.fill();
+
+            // reset transform matrix
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+
+            // clear rectangle where button cuts off
+            if (sequin.velocity.y < 0) {
+              ctx.clearRect(canvas.width/2 - button.offsetWidth/2, canvas.height/2 + button.offsetHeight/2, button.offsetWidth, button.offsetHeight);
+            }
+          })
+
+          // remove confetti and sequins that fall off the screen
+          // must be done in seperate loops to avoid noticeable flickering
+          confetti.forEach((confetto, index) => {
+            if (confetto.position.y >= canvas.height) confetti.splice(index, 1);
+          });
+          sequins.forEach((sequin, index) => {
+            if (sequin.position.y >= canvas.height) sequins.splice(index, 1);
+          });
+
+          window.requestAnimationFrame(render);
+        }
+
+        // cycle through button states when clicked
+        clickButton = () => {
+          if (!disabled) {
+            disabled = true;
+            // Loading stage
+            button.classList.add('loading');
+            button.classList.remove('ready');
+            setTimeout(() => {
+              // Completed stage
+              button.classList.add('complete');
+              button.classList.remove('loading');
+              setTimeout(() => {
+                window.initBurst();
+                setTimeout(() => {
+                  // Reset button so user can select it again
+                  disabled = false;
+                  button.classList.add('ready');
+                  button.classList.remove('complete');
+                }, 4000);
+              }, 320);
+            }, 1800);
+            setTimeout(clickButton2,20000);
+          }
+        }
+
+        
+        // cycle through button states when clicked
+        clickButton2 = () => {
+          if (!disabled) {
+            disabled = true;
+            // Loading stage
+            button.classList.add('loading');
+            button.classList.remove('ready');
+            setTimeout(() => {
+              // Completed stage
+              button.classList.add('complete');
+              button.classList.remove('loading');
+              setTimeout(() => {
+                window.initBurst();
+                setTimeout(() => {
+                  // Reset button so user can select it again
+                  disabled = false;
+                  button.classList.add('ready');
+                  button.classList.remove('complete');
+                }, 4000);
+              }, 320);
+            }, 1800);
+          }
+        }
+
+
+        // re-init canvas if the window size changes
+        resizeCanvas = () => {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+          cx = ctx.canvas.width / 2;
+          cy = ctx.canvas.height / 2;
+        }
+
+        // resize listenter
+        window.addEventListener('resize', () => {
+          resizeCanvas();
+        });
+
+        // click button on spacebar or return keypress
+        document.body.onkeyup = (e) => {
+          if (e.keyCode == 13 || e.keyCode == 32) {
+            clickButton();
+          }
+        }
+
+        // Set up button text transition timings on page load
+        textElements = button.querySelectorAll('.button-text');
+        textElements.forEach((element) => {
+          characters = element.innerText.split('');
+          let characterHTML = '';
+          characters.forEach((letter, index) => {
+            characterHTML += `<span class="char${index}" style="--d:${index * 30}ms; --dr:${(characters.length - index - 1) * 30}ms;">${letter}</span>`;
+          })
+          element.innerHTML = characterHTML;
+        })
+
+        // kick off the render loop
+        render();
+        </script>
+        <!-- <script type="text/javascript" src="js/script1.js"></script>
+        </script> -->
+      </body>
+    </html>
+  </body>
+</html>
